@@ -1,0 +1,12 @@
+services:
+# e2e is the service name. It's the label we type on the command line when running tests.
+  e2e:
+    build: .
+    image: nova-shop-e2e
+    ipc: host            # recommended by Playwright to avoid Chromium crashes
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./playwright-report:/e2e/playwright-report
+      - ./test-results:/e2e/test-results
