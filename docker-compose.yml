@@ -8,5 +8,5 @@ services:
       - path: .env
         required: false
     volumes:
-      - ./playwright-report:/e2e/playwright-report
-      - ./test-results:/e2e/test-results
+      - ./playwright-report:/e2etestdir/playwright-report
+      - ./test-results:/e2etestdir/test-results
