@@ -5,8 +5,8 @@ export class ProductsPage extends BasePage {
   readonly path = '/shop/products';
 
   readonly searchBox = this.page.getByPlaceholder(/search products/i);
-  readonly categoriesDropdown = this.page.getByRole('combobox', { name: /categories/i });
-  readonly featuredDropdown = this.page.getByRole('combobox', { name: /featured/i });
+  readonly categoriesDropdown = this.page.getByRole('combobox', { name: /category/i });
+  readonly featuredDropdown = this.page.getByRole('combobox', { name: /sort by/i });
   readonly inStockCheckbox = this.page.getByRole('checkbox', { name: /in stock only/i });
 
   async expectLoaded(): Promise<void> {
