@@ -10,11 +10,10 @@ export class LoginPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    // User-facing locators first; switch to data-testid if the app exposes them.
     this.username = page.getByLabel('Username');
     this.password = page.getByLabel('Password', { exact: true });
     this.signInButton = page.getByRole('button', { name: 'Sign in' });
-    this.errorMessage = page.getByRole('alert');
+    this.errorMessage = page.getByTestId('login-error');
   }
 
   async login(username: string, password: string): Promise<void> {
